@@ -6,11 +6,12 @@ export default {
       done: false
     })
   },
-  remove (state, { todo }) {
-            state.list.pop(state.list.indexOf(todo), 1)
-  },
-
-  toggle (state, todo) {
-    todo.done = !todo.done
+  remove(state, index){
+    state.list.splice(state.list.indexOf(index))
+    }
+    ,
+  update (state, { title, description}) {
+    state.list.title = title
+    state.list.description = description
   }
 }
